@@ -1,0 +1,36 @@
+# Arquivos do Android Studio
+.idea/
+*.iml
+.gradle/
+local.properties
+
+# Diretórios de compilação
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Arquivos binários
+*.apk
+*.ap_
+
+# Arquivos de cache e logs
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Arquivos de configuração e segurança
+*.keystore
+*.jks
+
+# Outros arquivos indesejados
+*.class
+*.jar
+*.dex
+*.so
+*.o
+*.a
+*.lib
+*.nupkg
+
