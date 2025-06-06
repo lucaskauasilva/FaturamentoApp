@@ -49,8 +49,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /* @+id/etValor (mEditTextValor) */
+        float valor = Float.parseFloat(mEditTextValor.getText().toString());
 
         /* @+id/tvSaldo (mTextViewSaldo) */
+        float saldo = 0;
+        mTextViewSaldo.setText(String.format("R$ %f", saldo));
 
         /* @+id/btnConfirma (mButtonConfirma) */
 
