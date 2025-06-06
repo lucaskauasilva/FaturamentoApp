@@ -1,6 +1,8 @@
 package com.example.faturamentoapp;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -25,7 +27,19 @@ public class TituloActivity extends AppCompatActivity {
         mButtonCadastrar = findViewById(R.id.btnCadastrar);
 
         /* @+id/etNomeFantasia (mEditTextNomeFantasia) */ //(à implementar)
+        String nomeFantasia = mEditTextNomeFantasia.getText().toString();
 
         /* @+id/btnCadastrar (mButtonCadastrar) */ //(à implementar)
+        mButtonCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nomeFantasia = mEditTextNomeFantasia.getText().toString();
+
+                if (!nomeFantasia.isEmpty()) {
+                    getSharedPreferences(MainActivity.ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE).
+                            edit().putString("nomeFantasia", nomeFantasia).apply();
+                }
+            }
+        });
     }
 }
