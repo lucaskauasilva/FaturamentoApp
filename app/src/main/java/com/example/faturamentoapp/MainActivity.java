@@ -1,5 +1,7 @@
 package com.example.faturamentoapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewSaldo;
     private Button mButtonConfirma;
     private Button mButtonAdicionarTitulo;
+    public static final String ARQUIVO_MEUS_DADOS = "MeusDados";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,4 +78,26 @@ public class MainActivity extends AppCompatActivity {
 
         /* @+id/btnAdicionarTitulo (mButtonAdicionarTitulo) */
     }
+
+    public void adicionarValor(int ano, float valor){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE);
+        float valorAtual = sharedPreferences.getFloat(String.valueOf(ano), 0);
+        float valorFinal = valorAtual + valor;
+        sharedPreferences.edit().putFloat(String.valueOf(ano), valorFinal).apply();
+    }
+    public void excluirValor(int ano, float valor){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE);
+        float valorAtual = sharedPreferences.getFloat(String.valueOf(ano), 0);
+        float valorFinal = valorAtual + valor;
+        sharedPreferences.edit().putFloat(String.valueOf(ano), valorFinal);
+    }
+    public void exibirSaldo(int ano){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE);
+        float saldo = sharedPreferences.getFloat(String.valueOf(ano), 0);
+        mTextViewSaldo.setText(String.format("R$ %f", saldo));
+    }
+
 }
