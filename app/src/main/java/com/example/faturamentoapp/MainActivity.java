@@ -35,5 +35,19 @@ public class MainActivity extends AppCompatActivity {
         mButtonConfirma = findViewById(R.id.btnConfirma);
         mButtonAdicionarTitulo = findViewById(R.id.btnAdicionarTitulo);
 
+        /* @+id/npAno (mNumberPickerAno) */
+        mNumberPickerAno.setMinValue(2015);
+        mNumberPickerAno.setMaxValue(2025);
+        int ano = mNumberPickerAno.getValue();
+
+        /* @+id/rgAdicionaExclui (mRadioGroupAdicionaExclui) */
+
+        /* @+id/etValor (mEditTextValor) */
+
+        /* @+id/tvSaldo (mTextViewSaldo) */
+
+        /* @+id/btnConfirma (mButtonConfirma) */
+
+        /* @+id/btnAdicionarTitulo (mButtonAdicionarTitulo) */
     }
 }
