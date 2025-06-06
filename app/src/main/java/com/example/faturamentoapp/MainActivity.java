@@ -1,6 +1,7 @@
 package com.example.faturamentoapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -56,6 +57,21 @@ public class MainActivity extends AppCompatActivity {
         mTextViewSaldo.setText(String.format("R$ %f", saldo));
 
         /* @+id/btnConfirma (mButtonConfirma) */
+        mButtonConfirma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int ano = mNumberPickerAno.getValue();
+                float valor = Float.parseFloat(mEditTextValor.getText().toString());
+
+                int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
+                if (checkedRadioButtonId == R.id.rbAdicionar){
+                    adicionarValor(ano, valor);
+                } else if (checkedRadioButtonId == R.id.rbExcluir){
+                    excluirValor(ano, valor);
+                }
+                exibirSaldo(ano);
+            }
+        });
 
         /* @+id/btnAdicionarTitulo (mButtonAdicionarTitulo) */
     }
