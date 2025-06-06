@@ -1,6 +1,7 @@
 package com.example.faturamentoapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /* @+id/btnAdicionarTitulo (mButtonAdicionarTitulo) */
+        mButtonAdicionarTitulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), TituloActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void adicionarValor(int ano, float valor){
