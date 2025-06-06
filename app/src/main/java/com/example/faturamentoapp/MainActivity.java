@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         int ano = mNumberPickerAno.getValue();
 
         /* @+id/rgAdicionaExclui (mRadioGroupAdicionaExclui) */
+        int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
+        if (checkedRadioButtonId == R.id.rbAdicionar){
+            adicionarValor();
+        } else if (checkedRadioButtonId == R.id.rbExcluir){
+            excluirValor();
+        }
 
         /* @+id/etValor (mEditTextValor) */
 
