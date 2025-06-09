@@ -26,10 +26,8 @@ public class TituloActivity extends AppCompatActivity {
         mEditTextNomeFantasia = findViewById(R.id.etNomeFantasia);
         mButtonCadastrar = findViewById(R.id.btnCadastrar);
 
-        /* @+id/etNomeFantasia (mEditTextNomeFantasia) */ //(à implementar)
         String nomeFantasia = mEditTextNomeFantasia.getText().toString();
 
-        /* @+id/btnCadastrar (mButtonCadastrar) */ //(à implementar)
         mButtonCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
