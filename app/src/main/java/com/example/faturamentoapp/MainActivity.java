@@ -39,8 +39,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences =
                 getSharedPreferences(ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE);
         float valorAtual = sharedPreferences.getFloat(String.valueOf(ano), 0);
-        float valorFinal = valorAtual + valor;
-        sharedPreferences.edit().putFloat(String.valueOf(ano), valorFinal);
+        float valorFinal = valorAtual - valor;
+
+        if (valorFinal < 0) {
+            valorFinal = 0;
+        }
+
+        sharedPreferences.edit().putFloat(String.valueOf(ano), valorFinal).apply();
     }
 
     public void exibirSaldo(int ano) {
