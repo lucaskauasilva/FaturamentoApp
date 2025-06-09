@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         mNumberPickerAno.setMinValue(2015);
         mNumberPickerAno.setMaxValue(2025);
         int ano = mNumberPickerAno.getValue();
+        mNumberPickerAno.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int valorAntigo, int valorNovo) {
+                exibirSaldo(ano);
+            }
+        });
 
         /* @+id/rgAdicionaExclui (mRadioGroupAdicionaExclui) */
         int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
