@@ -102,6 +102,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedPreferences = getSharedPreferences(ARQUIVO_MEUS_DADOS, Context.MODE_PRIVATE);
+        String nomeFantasia = sharedPreferences.getString("nomeFantasia", null);
+        if(nomeFantasia!=null){
+            setTitle(nomeFantasia);
+        }
+        int ano = mNumberPickerAno.getValue();
+        exibirSaldo(ano);
+    }
+
 /* (IMPLEMENTAÇÃO NA ORDEM-XML) */
 /**
  @+id/npAno (mNumberPickerAno)
