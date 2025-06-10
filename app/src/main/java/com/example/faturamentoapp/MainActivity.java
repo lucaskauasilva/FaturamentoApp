@@ -102,59 +102,66 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /* (IMPLEMENTAÇÃO NA ORDEM-XML) */
+/* (IMPLEMENTAÇÃO NA ORDEM-XML) */
 /**
  @+id/npAno (mNumberPickerAno)
- {}
- mNumberPickerAno.setMinValue(2015);
- mNumberPickerAno.setMaxValue(2025);
- int ano = mNumberPickerAno.getValue();
- mNumberPickerAno.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
- @Override
- public void onValueChange(NumberPicker picker, int valorAntigo, int valorNovo) {
- exibirSaldo(ano);
- }
- });
+ {linhas 71 - 78}
+    mNumberPickerAno.setMinValue(2015);
+    mNumberPickerAno.setMaxValue(2025);
+ {linha 83}
+    int ano = mNumberPickerAno.getValue();
+    mNumberPickerAno.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        @Override
+        public void onValueChange(NumberPicker picker, int valorAntigo, int valorNovo) {
+            exibirSaldo(ano);
+        }
+    });
 
  @+id/rgAdicionaExclui (mRadioGroupAdicionaExclui)
- int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
- if (checkedRadioButtonId == R.id.rbAdicionar){
- adicionarValor();
- } else if (checkedRadioButtonId == R.id.rbExcluir){
- excluirValor();
- }
+ {linhas 86 - 92}
+    int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
+    if (checkedRadioButtonId == R.id.rbAdicionar){
+        adicionarValor();
+    } else if (checkedRadioButtonId == R.id.rbExcluir){
+        excluirValor();
+    }
+    exibirSaldo(ano);
 
  @+id/etValor (mEditTextValor)
- float valor = Float.parseFloat(mEditTextValor.getText().toString());
+ {linha 84}
+    float valor = Float.parseFloat(mEditTextValor.getText().toString());
 
  @+id/tvSaldo (mTextViewSaldo)
- float saldo = 0;
- mTextViewSaldo.setText(String.format("R$ %f", saldo));
+ {linhas 54 - 55}
+    float saldo = 0;
+    mTextViewSaldo.setText(String.format("R$ %f", saldo));
 
  @+id/btnConfirma (mButtonConfirma)
- mButtonConfirma.setOnClickListener(new View.OnClickListener() {
- @Override
- public void onClick(View v) {
- int ano = mNumberPickerAno.getValue();
- float valor = Float.parseFloat(mEditTextValor.getText().toString());
+ {linhas 80 - 94}
+    mButtonConfirma.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int ano = mNumberPickerAno.getValue();
+            float valor = Float.parseFloat(mEditTextValor.getText().toString());
 
- int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
- if (checkedRadioButtonId == R.id.rbAdicionar){
- adicionarValor(ano, valor);
- } else if (checkedRadioButtonId == R.id.rbExcluir){
- excluirValor(ano, valor);
- }
- exibirSaldo(ano);
- }
- });
+            int checkedRadioButtonId = mRadioGroupAdicionaExclui.getCheckedRadioButtonId();
+            if (checkedRadioButtonId == R.id.rbAdicionar){
+                adicionarValor(ano, valor);
+            } else if (checkedRadioButtonId == R.id.rbExcluir){
+                excluirValor(ano, valor);
+            }
+            exibirSaldo(ano);
+        }
+    });
 
  @+id/btnAdicionarTitulo (mButtonAdicionarTitulo)
- mButtonAdicionarTitulo.setOnClickListener(new View.OnClickListener() {
- @Override
- public void onClick(View v) {
- Intent intent = new Intent(getBaseContext(), TituloActivity.class);
- startActivity(intent);
- }
- });
+ {linhas 96 - 102}
+    mButtonAdicionarTitulo.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getBaseContext(), TituloActivity.class);
+            startActivity(intent);
+        }
+    });
  */
 }
