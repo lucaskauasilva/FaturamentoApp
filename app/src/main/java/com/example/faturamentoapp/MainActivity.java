@@ -70,11 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
         mNumberPickerAno.setMinValue(2015);
         mNumberPickerAno.setMaxValue(2025);
-        int ano = mNumberPickerAno.getValue();
         mNumberPickerAno.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int valorAntigo, int valorNovo) {
-                exibirSaldo(ano);
+                exibirSaldo(valorNovo);
             }
         });
 
@@ -106,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
     /* (IMPLEMENTAÇÃO NA ORDEM-XML) */
 /**
  @+id/npAno (mNumberPickerAno)
+ {}
  mNumberPickerAno.setMinValue(2015);
  mNumberPickerAno.setMaxValue(2025);
  int ano = mNumberPickerAno.getValue();
